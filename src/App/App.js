@@ -18,15 +18,15 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <main className="App">
         <h1 className='app-title'>Turing Cafe Reservations</h1>
         <div className='resy-form'>
 
         </div>
-        <div className='resy-container'>
+        <section className='resy-container'>
           
-        </div>
-      </div>
+        </section>
+      </main>
     )
   }
 }
