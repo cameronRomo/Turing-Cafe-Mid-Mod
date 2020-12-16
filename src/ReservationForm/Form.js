@@ -7,8 +7,8 @@ class Form extends Component {
     this.state = {
       name: '',
       date: '',
-      time: '', 
-      number: '' //if posting, this will need to be changed to an integer
+      time: '',
+      number: '',
     }
   }
   
@@ -22,6 +22,7 @@ class Form extends Component {
       id: Date.now(),
       ...this.state,
     }
+
     this.props.addReservation(newReservation);
     this.clearInputs();
   }
@@ -58,7 +59,7 @@ class Form extends Component {
         />
 
         <input
-          type='text'
+          type='number'
           placeholder='Number of guests'
           name='number'
           value={ this.state.number }
