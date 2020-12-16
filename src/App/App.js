@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import { currentReservationsAPI } from '../apiCalls'
-import { Reservations } from '../Reservations/Reservations'
+import { currentReservationsAPI } from '../apiCalls';
+import { Reservations } from '../Reservations/Reservations';
+import { Form } from '../ReservationForm/Form';
 
 class App extends Component {
   constructor() {
@@ -17,13 +18,19 @@ class App extends Component {
     .catch(err => console.log(err))
   }
 
+  addReservation = (newReservation) => {
+    this.setState({ reservations: [...this.state.reservations, newReservation] });
+  }
+
   render() {
     return (
       <main className="App">
         <h1 className='app-title'>Turing Cafe Reservations</h1>
-        <div className='resy-form'>
-
-        </div>
+        <section className='resy-form'>
+          <Form 
+            addReservation={this.addReservation}
+          />
+        </section>
         <section className='resy-container'>
           {this.state.reservations.length === 0 && <h2>There are currently no reservations.</h2>}
           <Reservations 
